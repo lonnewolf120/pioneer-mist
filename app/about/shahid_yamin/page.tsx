@@ -4,10 +4,10 @@ import ErrorBoundary from '@/components/common/ErrorBoundary'
 
 const martyrData = {
   name: "Shykh Ashhabul Yamin",
-  age: 35,
+  age: 24,
   killedBy: "Oppressive Regime",
-  deathAge: 35,
-  deathLocation: "Freedom Square, Capital City",
+  deathAge: 24,
+  deathLocation: "Savar, Dhaka, Bangladesh",
   image: "/SY_profile.jpg",
   bio: "Shykh Ashhabul Yamin was a courageous activist who dedicated his life to fighting for human rights and democracy...",
   achievements: [

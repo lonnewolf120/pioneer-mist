@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { MenuIcon, UserCircle, Home, Info, Mail, Package, Settings, LogOut } from 'lucide-react'
+import { MenuIcon, UserCircle, Home, Info, Mail, PenTool , Settings, LogOut, Trophy,Camera } from 'lucide-react'
 import ThemeSelector from "./ThemeSelector"
 
 interface User {
@@ -29,14 +29,12 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: 'Home', href: '/', icon: Home },
-  { name: 'About', href: '/about', icon: Info },
-  { name: 'Blogs', href: '/blogs/feed', icon: Mail },
-  { name: 'Memories', href: '/memories/feed', icon: Package },
+  { name: 'Pioneers', href: '/about', icon: Trophy },
+  { name: 'Blogs', href: '/blogs/feed', icon: PenTool },
+  { name: 'Memories', href: '/memories/feed', icon: Camera },
 ]
 
-const DDItems: NavItem[] = [
-    { name: 'Profile', href: '/profile/12345', icon: Home },    //TODO: later fetch from cookies and edit here
-    { name: 'Dashboard', href: '/dashboard', icon: Info },
+const DDItems: NavItem[] = [ { name: 'Dashboard', href: '/dashboard', icon: Info },
     { name: 'Signout', href: '/logout', icon: Mail }  
 ]
 
