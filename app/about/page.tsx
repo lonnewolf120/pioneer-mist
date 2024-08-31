@@ -23,7 +23,7 @@ export default function Component() {
     <div className="min-h-screen bg-black bg-opacity-90 bg-[radial-gradient(#330000_1px,transparent_1px)] [background-size:16px_16px] text-gray-200">
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-center mb-12 text-red-600">Our Brave Martyrs</h1>
-        <div className="grid md:grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 gap-2 ">
           {martyrs.map((martyr, index) => (
             <Card key={index} className="bg-gray-900 border-red-800 flex flex-col w-[30rem]">
               <Link href={martyr.link} className="absolute inset-0 z-10" prefetch={false} />
