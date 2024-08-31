@@ -62,7 +62,7 @@ return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
                 <div className="flex items-center">
-                    <Link href="/" className="text-2xl font-bold text-red-500">
+                    <Link href="/" className="text-2xl font-bold text-red-600">
                         Logo
                     </Link>
                 </div>
@@ -71,7 +71,7 @@ return (
                         <Link 
                             key={item.name}
                             href={item.href} 
-                            className={`inline-flex items-center px-1 pt-1 text-sm font-medium 'border-transparent text-gray-300 hover:border-gray-300 hover:text-gray-100`}
+                            className={`inline-flex items-center px-1 pt-1 text-sm font-medium 'border-transparent text-gray-300 hover:border-gray-300 hover:text-red-600`}
                         >
                             <item.icon className="w-4 h-4 mr-2" />
                             {item.name}
@@ -82,14 +82,14 @@ return (
                     {user ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" className="relative rounded-full bg-black p-1 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black">
+                                <Button variant="ghost" className="relative rounded-full bg-black p-1 text-gray-300 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black">
                                     <span className="absolute -inset-1.5" />
                                     <UserCircle className="h-6 w-6" aria-hidden="true" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="bg-black border border-red-800">
                                 <DropdownMenuLabel className="text-gray-300">{user.name}</DropdownMenuLabel>
-                                <DropdownMenuSeparator className="bg-red-800" />
+                                <DropdownMenuSeparator className="bg-red-600" />
                                 { DDItems.map((item) =>(
                                 <DropdownMenuItem className="text-gray-300 hover:bg-red-900 hover:text-white">
                                     <UserCircle className="mr-2 h-4 w-4" />
@@ -108,7 +108,7 @@ return (
                 <div className="-mr-2 flex items-center sm:hidden">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
+                            <Button variant="ghost" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-black hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
                                 <span className="sr-only">Open main menu</span>
                                 <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                             </Button>
