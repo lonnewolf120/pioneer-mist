@@ -30,8 +30,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About', href: '/about', icon: Info },
-  { name: 'Blogs', href: '/blogs', icon: Mail },
-  { name: 'Memories', href: '/memories', icon: Package },
+  { name: 'Blogs', href: '/blogs/feed', icon: Mail },
+  { name: 'Memories', href: '/memories/feed', icon: Package },
 ]
 
 const DDItems: NavItem[] = [

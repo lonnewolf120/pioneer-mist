@@ -39,9 +39,9 @@ const martyrs: Martyr[] = [
 
 //TODO: add the articles
 const articles: Article[] = [
-    { id: 1, title: 'The History of MIST Student Movements', excerpt: 'Explore the rich history of student activism at MIST...', image: '/articles/article1.jpg', link: '/articles/history-of-mist-movements' },
-    { id: 2, title: 'Remembering the Heroes of the Anti-Quota Movement', excerpt: 'A tribute to those who sacrificed everything for equality...', image: '/articles/article2.jpg', link: '/articles/remembering-heroes' },
-    { id: 3, title: 'The Impact of Student Activism on Bangladesh\'s Education System', excerpt: 'How MIST students shaped the future of education...', image: '/articles/article3.jpg', link: '/articles/impact-of-student-activism' },
+    { id: 1, title: 'The History of MIST Student Movements', excerpt: 'Explore the rich history of student activism at MIST...', image: '/next.svg', link: '/articles/history-of-mist-movements' },
+    { id: 2, title: 'Remembering the Heroes of the Anti-Quota Movement', excerpt: 'A tribute to those who sacrificed everything for equality...', image: '/next.svg', link: '/articles/remembering-heroes' },
+    { id: 3, title: 'The Impact of Student Activism on Bangladesh\'s Education System', excerpt: 'How MIST students shaped the future of education...', image: '/next.svg', link: '/articles/impact-of-student-activism' },
 ];
 
 //TODO: add the events
