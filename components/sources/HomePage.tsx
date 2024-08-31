@@ -31,18 +31,20 @@ interface Event {
 }
 
 const martyrs: Martyr[] = [
-    { id: 1, name: 'Shahid Shykh Ashhabul Yamin', image: '/components/content/shahid_yamin/BuetStory.jpg', description: 'Brave soul who stood against injustice' },
-    { id: 2, name: 'Shahid Shykh Ashhabul Yamin', image: '/components/content/shahid_yamin/MCC.jpg', description: 'A voice for student rights' },
-    { id: 3, name: 'Shahid MD. Rakibul Hossein', image: '/components/content/shahid_rakib/1.jpg', description: 'Champion of educational reform' },
-    { id: 4, name: 'Shahid MD. Rakibul Hossein', image: '/components/content/shahid_rakib/2.jpg', description: 'Fought for equality in education' },
+    { id: 1, name: 'Shahid Shykh Ashhabul Yamin', image: '/SY_profile.jpg', description: 'Brave soul who stood against injustice' },
+    { id: 2, name: 'Shahid Shykh Ashhabul Yamin', image: '/SY_MIC.jpg', description: 'A voice for student rights' },
+    { id: 3, name: 'Shahid MD. Rakibul Hossein', image: '/sr1.jpg', description: 'Champion of educational reform' },
+    { id: 4, name: 'Shahid MD. Rakibul Hossein', image: '/sr2.jpg', description: 'Fought for equality in education' },
 ];
 
+//TODO: add the articles
 const articles: Article[] = [
     { id: 1, title: 'The History of MIST Student Movements', excerpt: 'Explore the rich history of student activism at MIST...', image: '/articles/article1.jpg', link: '/articles/history-of-mist-movements' },
     { id: 2, title: 'Remembering the Heroes of the Anti-Quota Movement', excerpt: 'A tribute to those who sacrificed everything for equality...', image: '/articles/article2.jpg', link: '/articles/remembering-heroes' },
     { id: 3, title: 'The Impact of Student Activism on Bangladesh\'s Education System', excerpt: 'How MIST students shaped the future of education...', image: '/articles/article3.jpg', link: '/articles/impact-of-student-activism' },
 ];
 
+//TODO: add the events
 const events: Event[] = [
     { id: 1, title: 'Annual Memorial Service', date: '2023-07-15', description: 'Honoring our fallen heroes' },
     { id: 2, title: 'Student Rights Seminar', date: '2023-08-22', description: 'Discussing the progress and challenges in student rights' },
@@ -52,43 +54,53 @@ const events: Event[] = [
 export default function HomePage() {
   const [currentMartyr, setCurrentMartyr] = useState(0)
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentMartyr((prev) => (prev + 1) % martyrs.length)
-  //   }, 5000)
-  //   return () => clearInterval(timer)
-  // }, [])
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentMartyr((prev) => (prev + 1) % martyrs.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="relative bg-black py-32 px-6 sm:py-40 sm:px-12 lg:px-16 rounded-lg overflow-hidden">
+        <div className="relative bg-black py-48 px-8 sm:py-56 sm:px-16 lg:px-20 rounded-lg overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
+            <Link href="/shahid_yamin">
             <Image
-              src="/hero-background.jpg"
+              src="/cover.jpg"
               alt="MIST campus"
               layout="fill"
               objectFit="cover"
-              className="opacity-30"
+              className="opacity-60"
             />
+            </Link>
           </div>
-          <div className="relative max-w-3xl mx-auto text-center">
+          <div
+            id="pioneer text"
+            className="absolute bottom-10 left-10 max-w-3xl opacity-80 text-left"
+          >
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-red-500">
               MIST Pioneers
             </h1>
-            <p className="mt-6 text-xl max-w-prose mx-auto">
+            <div className="mt-6 text-xl max-w-prose">
               Honoring the brave students who fought for rights and justice at the Military Institute of Science and Technology.
-            </p>
-            <div className="mt-10 flex justify-center">
-              <Button className="bg-red-600 hover:bg-red-700 text-white">Learn More</Button>
+            </div>
+            <div className="mt-10">
+              <Link href="/shahid_yamin">
+              <Button className="bg-red-600 hover:bg-red-700 text-white">
+                Learn More about Shykh Ashhabul Yamin
+              </Button>
+              </Link>
             </div>
           </div>
         </div>
 
+
         {/* Martyrs Carousel */}
         <section className="mt-16">
           <h2 className="text-3xl font-bold text-center mb-8 text-red-500">Our Brave Martyrs</h2>
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-xl mx-auto">
             <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-500 ease-in-out transform">
               <Image
                 src={martyrs[currentMartyr].image}
@@ -118,7 +130,7 @@ export default function HomePage() {
                 <ChevronRight className="h-6 w-6" />
               </Button>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-black/75 text-white p-4 text-center">
+            <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 text-center">
               <p className="text-lg font-semibold">{martyrs[currentMartyr].name}</p>
               <p className="text-sm">{martyrs[currentMartyr].description}</p>
             </div>

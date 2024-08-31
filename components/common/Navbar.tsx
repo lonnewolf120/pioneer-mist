@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MenuIcon, UserCircle, Home, Info, Mail, Package, Settings, LogOut } from 'lucide-react'
+import ThemeSelector from "./ThemeSelector"
 
 interface User {
   name: string;
@@ -145,9 +146,14 @@ return (
                                     
                                 </DropdownMenuItem>
                             )}
+                            
+                            <DropdownMenuItem>
+                                <ThemeSelector text="Toggle theme" />
+                            </DropdownMenuItem>
                         </DropdownMenuContent>
-                    </DropdownMenu>
+                    </DropdownMenu> 
                 </div>
+                
             </div>
         </div>
     </nav>
