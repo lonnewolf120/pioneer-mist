@@ -37,7 +37,7 @@ export default function Home() {
     <ErrorBoundary>
       <main className="min-h-screen bg-gray-900 text-white">
         <Suspense fallback={<div>Loading...</div>}>
-          <MartyrPage />
+          <MartyrPage martyrData={martyrData}/>
         </Suspense>
       </main>
     </ErrorBoundary>
