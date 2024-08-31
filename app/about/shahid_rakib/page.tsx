@@ -14,9 +14,9 @@ const martyrData = {
     "Authored influential books on civil liberties",
   ],
   memories: [
-    { title: "Remembering John's Courage", url: "#" },
+    { title: "Remembering Rakib's Courage", url: "#" },
     { title: "A Day in the Life of MD. Rakibul Hussein", url: "#" },
-    { title: "John's Last Speech", url: "#" },
+    { title: "Rakib's Last Speech", url: "#" },
   ],
   articles: [
     { title: "The Legacy of MD. Rakibul Hussein", url: "#" },

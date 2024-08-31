@@ -16,9 +16,9 @@ const martyrData = {
     "Authored influential books on civil liberties",
   ],
   memories: [
-    { title: "Remembering John's Courage", url: "#" },
+    { title: "Remembering Yamin's Courage", url: "#" },
     { title: "A Day in the Life of Shykh Ashhabul Yamin", url: "#" },
-    { title: "John's Last Speech", url: "#" },
+    { title: "Yamin's Last Speech", url: "#" },
   ],
   articles: [
     { title: "The Legacy of Shykh Ashhabul Yamin", url: "#" },
