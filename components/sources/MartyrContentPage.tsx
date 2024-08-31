@@ -1,99 +1,103 @@
 "use client"
-import { useState } from 'react'
+import Image from "next/image"
+import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function Component() {
-  const [bioTab, setBioTab] = useState("growing-up")
+type MartyrData = {
+  name: string
+  age: number
+  killedBy: string
+  deathAge: number
+  deathLocation: string
+  image: string
+  bio: string
+  achievements: string[]
+  memories: { title: string; url: string }[]
+  articles: { title: string; url: string }[]
+}
 
+export default function MartyrPage({ martyrData }: { martyrData: MartyrData }) {
   return (
-    <div className="min-h-screen bg-black bg-opacity-90 bg-[radial-gradient(#330000_1px,transparent_1px)] [background-size:16px_16px] text-gray-200 pb-12">
-      <header className="bg-gray-900 py-8 mb-8">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-red-600 mb-4">Shahid Yamin</h1>
-          <img
-            src="/placeholder.svg?height=200&width=400"
-            alt="Shahid Yamin"
-            className="w-full max-w-2xl h-64 object-cover rounded-md mx-auto"
-          />
+    <div className="min-h-screen bg-black text-white">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="flex justify-center md:justify-start">
+            <Image
+              src={martyrData.image}
+              alt={martyrData.name}
+              width={300}
+              height={400}
+              className="rounded-lg shadow-lg border-2 border-red-600"
+            />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold mb-4 text-red-600">{martyrData.name}</h1>
+            <p className="text-xl mb-2">Age: {martyrData.age}</p>
+            <p className="text-xl mb-2">Killed by: {martyrData.killedBy}</p>
+            <p className="text-xl mb-2">Died at age: {martyrData.deathAge}</p>
+            <p className="text-xl mb-2">Place of death: {martyrData.deathLocation}</p>
+          </div>
         </div>
-      </header>
 
-      <div className="container mx-auto px-4">
         <Tabs defaultValue="bio" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-gray-800">
-            <TabsTrigger value="bio" className="text-gray-200 data-[state=active]:bg-red-700">Bio</TabsTrigger>
-            <TabsTrigger value="achievements" className="text-gray-200 data-[state=active]:bg-red-700">Achievements</TabsTrigger>
-            <TabsTrigger value="memories" className="text-gray-200 data-[state=active]:bg-red-700">Memories</TabsTrigger>
-            <TabsTrigger value="blog-posts" className="text-gray-200 data-[state=active]:bg-red-700">Blog Posts</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-4 bg-gray-900">
+            <TabsTrigger value="bio" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Bio</TabsTrigger>
+            <TabsTrigger value="achievements" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Achievements</TabsTrigger>
+            <TabsTrigger value="memories" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Memories</TabsTrigger>
+            <TabsTrigger value="articles" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Blog/Articles</TabsTrigger>
           </TabsList>
-
-          <TabsContent value="bio" className="mt-6">
-            <Tabs value={bioTab} onValueChange={setBioTab}>
-              <TabsList className="bg-gray-800 mb-4">
-                <TabsTrigger value="growing-up" className="text-gray-200 data-[state=active]:bg-red-700">Growing Up</TabsTrigger>
-                <TabsTrigger value="school" className="text-gray-200 data-[state=active]:bg-red-700">School</TabsTrigger>
-                <TabsTrigger value="college" className="text-gray-200 data-[state=active]:bg-red-700">College</TabsTrigger>
-                <TabsTrigger value="university" className="text-gray-200 data-[state=active]:bg-red-700">University</TabsTrigger>
-              </TabsList>
-              <TabsContent value="growing-up">
-                <p>Information about Shahid Yamin's early years and upbringing...</p>
-              </TabsContent>
-              <TabsContent value="school">
-                <p>Details about Shahid Yamin's school life and experiences...</p>
-              </TabsContent>
-              <TabsContent value="college">
-                <p>Information about Shahid Yamin's college years...</p>
-              </TabsContent>
-              <TabsContent value="university">
-                <p>Details about Shahid Yamin's university education and experiences...</p>
-              </TabsContent>
-            </Tabs>
+          <TabsContent value="bio">
+            <Card className="bg-gray-900 border-red-600">
+              <CardHeader>
+                <CardTitle className="text-red-600">Biography</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>{martyrData.bio}</p>
+              </CardContent>
+            </Card>
           </TabsContent>
-
-          <TabsContent value="achievements" className="mt-6">
-            <h2 className="text-2xl font-bold text-red-500 mb-4">Notable Achievements</h2>
-            <ul className="list-disc list-inside space-y-2">
-              <li>Achievement 1</li>
-              <li>Achievement 2</li>
-              <li>Achievement 3</li>
-            </ul>
-            <h3 className="text-xl font-bold text-red-500 mt-6 mb-2">Related Articles</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-blue-400 hover:underline">Article 1 about Shahid Yamin</a></li>
-              <li><a href="#" className="text-blue-400 hover:underline">Article 2 about Shahid Yamin</a></li>
-            </ul>
+          <TabsContent value="achievements">
+            <Card className="bg-gray-900 border-red-600">
+              <CardHeader>
+                <CardTitle className="text-red-600">Achievements</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5">
+                  {martyrData.achievements.map((achievement, index) => (
+                    <li key={index}>{achievement}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </TabsContent>
-
-          <TabsContent value="memories" className="mt-6">
-            <h2 className="text-2xl font-bold text-red-500 mb-4">Memories</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <Card key={i} className="bg-gray-900 border-red-800">
+          <TabsContent value="memories">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {martyrData.memories.map((memory, index) => (
+                <Card key={index} className="bg-gray-900 border-red-600">
                   <CardHeader>
-                    <CardTitle className="text-red-500">Memory {i}</CardTitle>
+                    <CardTitle className="text-red-600">{memory.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-400">A touching memory of Shahid Yamin shared by Admin...</p>
-                    <Button className="mt-4 bg-red-700 hover:bg-red-600">Read More</Button>
+                    <Link href={memory.url} className="text-red-400 hover:underline">
+                      Read memory
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </TabsContent>
-
-          <TabsContent value="blog-posts" className="mt-6">
-            <h2 className="text-2xl font-bold text-red-500 mb-4">Community Blog Posts</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <Card key={i} className="bg-gray-900 border-red-800">
+          <TabsContent value="articles">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {martyrData.articles.map((article, index) => (
+                <Card key={index} className="bg-gray-900 border-red-600">
                   <CardHeader>
-                    <CardTitle className="text-red-500">Blog Post {i}</CardTitle>
+                    <CardTitle className="text-red-600">{article.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-400">A heartfelt blog post about Shahid Yamin by a community member...</p>
-                    <Button className="mt-4 bg-red-700 hover:bg-red-600">Read Full Post</Button>
+                    <Link href={article.url} className="text-red-400 hover:underline">
+                      Read article
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
