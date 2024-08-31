@@ -66,7 +66,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <div className="relative bg-black py-48 px-8 sm:py-56 sm:px-16 lg:px-20 rounded-lg overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
-            <Link href="/shahid_yamin">
+            <Link href="/about/shahid_yamin">
             <Image
               src="/cover.jpg"
               alt="MIST campus"
@@ -87,7 +87,7 @@ export default function HomePage() {
               Honoring the brave students who fought for rights and justice at the Military Institute of Science and Technology.
             </div>
             <div className="mt-10">
-              <Link href="/shahid_yamin">
+              <Link href="/about/shahid_yamin">
               <Button className="bg-red-600 hover:bg-red-700 text-white">
                 Learn More about Shykh Ashhabul Yamin
               </Button>
