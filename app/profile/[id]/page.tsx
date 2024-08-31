@@ -54,7 +54,7 @@ export default function UserProfile() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-4">
+    <div className="min-h-screen bg-black text-white p-16">
       <div className="container mx-auto">
         <Tabs defaultValue="profile" className="w-full">
           <TabsList className="grid w-full grid-cols-2 bg-gray-900">

@@ -15,6 +15,7 @@ import { MenuIcon, UserCircle, Home, Info, Mail, Package, Settings, LogOut } fro
 import ThemeSelector from "./ThemeSelector"
 
 interface User {
+  id: string;
   name: string;
   email: string;
 }
@@ -29,12 +30,12 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About', href: '/about', icon: Info },
-  { name: 'Contact', href: '/contact', icon: Mail },
-  { name: 'Components', href: '/components', icon: Package },
+  { name: 'Blogs', href: '/blogs', icon: Mail },
+  { name: 'Memories', href: '/memories', icon: Package },
 ]
 
 const DDItems: NavItem[] = [
-    { name: 'Profile', href: '/profile', icon: Home },
+    { name: 'Profile', href: '/profile/12345', icon: Home },    //TODO: later fetch from cookies and edit here
     { name: 'Dashboard', href: '/dashboard', icon: Info },
     { name: 'Signout', href: '/logout', icon: Mail }  
 ]
@@ -45,6 +46,7 @@ export default function Component() {
   
   useEffect(() => {
     setUser({
+        id: '12345',
         name: 'someone',
         email: 'something'
     })
