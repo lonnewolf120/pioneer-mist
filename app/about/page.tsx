@@ -15,7 +15,7 @@ export default function Component() {
       name: "Shahid MD. Rakibul Hossein",
       profileUrl: "/SR_profile.png",
       description: "Shahid Rakib was a very inspirational, charismatic student and person who always stood up for people, helped them and came up in moments of their dispair, he didn't hesitat to participate in the student movement despite he bacame a Professional, he participated in the movement, not because he was once a student but he was a person who always stood by the side of justice",
-      link: "/about/shahid_yamin",
+      link: "/about/shahid_rakib",
     }
   ];
 
