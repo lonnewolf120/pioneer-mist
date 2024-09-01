@@ -36,6 +36,9 @@ export function MobileNav() {
           <MobileLink onOpenChange={setOpen} href="/about">
             About
           </MobileLink>
+          <MobileLink onOpenChange={setOpen} href="/admin">
+            Admin
+          </MobileLink>
           <Link target="_blank" rel="noreferrer" href={SiteConfig.links.github}>
             GitHub
           </Link>

@@ -2,12 +2,12 @@ export const SiteConfig = {
   name: "Pioneers of MIST",
   url: "https://pioneers.mist.ac.bd",
   description: "MIST Blogpost website",
-  author: "Abrar Mahir Esam",
+  author: "Pioneers of MIST@2024",
   links: {
     twitter: "",
     facebook: "",
     instagram: "",
-    github: "",
+    github: "https://www.mist.ac.bd",
     personalsite: "",
   },
 };

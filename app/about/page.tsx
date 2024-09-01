@@ -21,24 +21,22 @@ export default async function AboutPage() {
       <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
         <div className="min-w-48 max-w-48 flex flex-col gap-2">
           <Avatar className="h-48 w-48">
-            <AvatarImage src="/avatar.png" alt={SiteConfig.author} />
+            <AvatarImage src="/1200px-MIST.svg.png" alt={SiteConfig.author} />
             <AvatarFallback>JC</AvatarFallback>
           </Avatar>
           <h2 className="text-2xl font-bold text-center break-words">
             {SiteConfig.author}
           </h2>
           <p className="text-muted-foreground text-center break-words">
-            Software Developer
+            A place where MISTians share their knowledge and experiences
           </p>
         </div>
-        <p className="text-muted-foreground text-lg py-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum
+        <p className="text-muted-foreground text-lg py-4 md:mt-20 text-justify">
+          Our website is a platform for the MIST community to share their
+          knowledge and experiences. We aim to provide a platform for the
+          community to share their knowledge and experiences with the world. We
+          have made this website in Memory of our martyred classmate <b>Shykh Aashhabul Yamin</b>
+          and our respected senior <b>Md Rakibul Hussein</b>, who were students of MIST.
         </p>
       </div>
     </div>
